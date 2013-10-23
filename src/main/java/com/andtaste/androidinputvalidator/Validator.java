@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class Validator {
   protected List<String> errors = new ArrayList<String>();
-
+  private int errorSize = 0;
   /**
    * Fires all validators for given fields
    * For now it's checking only TextViews.
@@ -59,7 +59,9 @@ public class Validator {
             errors.add(returnedError);
         }
         if (errors.size() > 0) {
-          textView.setText(errors.get(errors.size() - 1));
+          if(errorSize != errors.size())
+            textView.setText(errors.get(errors.size() - 1));
+          errorSize = errors.size();
         }
       }
       return true;
