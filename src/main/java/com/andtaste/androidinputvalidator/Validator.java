@@ -59,8 +59,10 @@ public class Validator {
             errors.add(returnedError);
         }
         if (errors.size() > 0) {
-          if(errorSize != errors.size())
-            textView.setText(errors.get(errors.size() - 1));
+          if(errorSize != errors.size()){
+            textView.setText("");
+            textView.setHint(errors.get(errors.size() - 1));
+          }
           errorSize = errors.size();
         }
       }
