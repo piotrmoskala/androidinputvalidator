@@ -6,12 +6,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * E-mail annotation
- *
- * @author Piotr Moskala
+ * Created by piotrmoskala on 13.12.2013.
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Email {
-  public String value() default "This is not valid e-mail address";
+public @interface ValueGreaterThan {
+  public String value();
+  public int number() default 0;
 }

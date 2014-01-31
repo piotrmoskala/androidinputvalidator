@@ -37,6 +37,8 @@ Annotations
         @NotEmpty or @NotEmpty("text to set")
         @Number  or @Number("text to set")
         @Regex(value = "answer when not match", regex = "regex");
+        @ValueGreaterThan(value = "this value must be greater than 2", number = 2)
+        @ValueLessThan(value = "this value must be less than 3", number = 3)
 
 ===================================
 Add your own annotation
@@ -46,6 +48,12 @@ One thing you have to do is:
 * create annotation
 * create validator
 * add validator to Validators class the same way as the others are added.
+
+===================================
+EDIT: 
+===================================
+
+You can simply use validators on any other class that implement Validatable interface.
 
 
 
